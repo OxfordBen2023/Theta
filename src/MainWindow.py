@@ -1,5 +1,6 @@
-from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout
+from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QMessageBox
 from src.MakeMoveInterface import MakeMoveInterface
+from src.utils import *
 
 from src.Theta_core import *
 
@@ -67,8 +68,9 @@ class MainWindow(QMainWindow):
         print(f'the selected cards are: {selected_cards}')
         
         if action_wanted is not 'initialise':
-            print("GAME WILL DO BUISNESS")
-            self.game.next_player()
+            error_message = self.game.play_round(action_wanted,selected_cards)
+            if error_message:
+                show_error_message(error_message)
 
 
         # refresh cards
