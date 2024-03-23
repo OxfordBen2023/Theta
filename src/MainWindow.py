@@ -43,7 +43,7 @@ class MainWindow(QMainWindow):
         ### 5 set the layout for the Wigget (parent widget)
         widget.setLayout(self.widget_layout)
         self.setCentralWidget(widget)
-        self.resize(800, 300) # Does not work ??
+        self.resize(700, 550)
 
         self.update_all_interface('initialise')
 
@@ -77,6 +77,11 @@ class MainWindow(QMainWindow):
         for index, interface in self.interface_player_dict.items():
             interface.hand.refresh_cards(self.game.player_dict[index].cards)
         
+        # Game Over
+        if self.game.game_over():
+            show_error_message("The game is over")
+
+
         # active window
         for index, interface in self.interface_player_dict.items():
             if self.game.active_player == index:
