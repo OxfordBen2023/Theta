@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import QDialog, QVBoxLayout,QPushButton, QComboBox, QLabel
 
-class PlayerDialog(QDialog):
+class PlayerChooseDialog(QDialog):
     def __init__(self, available_players, parent=None):
-        super(PlayerDialog, self).__init__(parent)
+        super(PlayerChooseDialog, self).__init__(parent)
         layout = QVBoxLayout(self)
 
         self.label = QLabel("Choose who you want to randomly draw from:")

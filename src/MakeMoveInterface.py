@@ -10,6 +10,9 @@ class MakeMoveInterface(QWidget):
         self.player_number = player_index
         self.player_name = player_name
 
+        print(f"????playeur interface{self.player_name}")
+        print(self.isEnabled())
+
         # Create a vertical layout
         widget_layout = QVBoxLayout()
 

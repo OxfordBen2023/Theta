@@ -14,14 +14,14 @@ class HandOfCards(QWidget):
         self.setStyleSheet("padding: 0; margin: 0; ")
 
         for card_value in self.cards_value_list:
-            button = CardButton(card_value)
+            button = CardButton(card_value, True)
             self.buttons.append(button)
             self.widget_layout.addWidget(button) #, 0, card_number)
 
         self.setMaximumWidth(len(self.cards_value_list)*100)
         self.setLayout(self.widget_layout)
 
-    def refresh_cards(self, player_cards):
+    def refresh_cards(self, player_cards, enable = True):
 
         self.cards_value_list = player_cards
 
@@ -38,7 +38,7 @@ class HandOfCards(QWidget):
         
         # redraw all cards
         for card_value in self.cards_value_list:
-            button = CardButton(card_value)
+            button = CardButton(card_value, enable)
             self.buttons.append(button)
             self.widget_layout.addWidget(button)
 

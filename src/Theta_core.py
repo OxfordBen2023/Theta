@@ -10,7 +10,7 @@ for index, item in enumerate(ALL_THETA_CARDS):
         ALL_THETA_CARDS[index] = str(item)
 
 TOTAL_NUMBER_OF_CARDS = len(ALL_THETA_CARDS)
-CARDS_BY_PLAYER_NUMBER =10
+CARDS_BY_PLAYER_NUMBER = 11
 
 
 class Player():
@@ -154,14 +154,14 @@ class Theta_Game():
                 return "You are the last player, you can not do this move !"
 
             # Ask the user to choose from who he wants to take
-            chosen_player = show_player_dialog(available_player)
+            chosen_player = show_choose_player_dialog(available_player)
 
             # Get chosen player index from the dict :
             for index, name in self.name_dict.items():
                 if name == chosen_player:
                     chosen_player_index = index
 
-            # Send ONE unwanted cards to the draw pile. Then loop over the remaining ones to unsure we don't miss a gameover in chosen_player.
+            # Send ONE unwanted cards to the draw pile. Then loop over the remaining ones to make sure we don't miss a gameover in chosen_player.
             self.player_dict[self.active_player].cards.remove(selected_cards[0])
             self.draw_pile.append(selected_cards[0])
             selected_cards.pop(0)
