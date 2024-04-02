@@ -2,19 +2,17 @@ from PyQt5.QtWidgets import QMessageBox
 from src.PlayerChooseDialog import PlayerChooseDialog
 from src.PlayerNameDialog import PlayerNameDialog
 
-# def show_error_message(text_error):
-#     msg = QMessageBox()
-#     msg.setIcon(QMessageBox.Critical)
-#     msg.setText(text_error)
-#     msg.setWindowTitle("Wrong move")
-#     msg.exec_()
 
 def show_message(text_error):
     msg = QMessageBox()
     if "finished playing" in text_error:
         msg.setIcon(QMessageBox.Information)
         msg.setText(text_error)
-        msg.setWindowTitle("Player out")  
+        msg.setWindowTitle("Player out")
+    elif "Here are your scores" in text_error:
+        msg.setIcon(QMessageBox.Information)
+        msg.setText(text_error)
+        msg.setWindowTitle("Game over")  
     else:
         msg.setIcon(QMessageBox.Critical)
         msg.setText(text_error)

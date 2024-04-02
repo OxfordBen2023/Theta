@@ -10,7 +10,7 @@ for index, item in enumerate(ALL_THETA_CARDS):
         ALL_THETA_CARDS[index] = str(item)
 
 TOTAL_NUMBER_OF_CARDS = len(ALL_THETA_CARDS)
-CARDS_BY_PLAYER_NUMBER = 11
+CARDS_BY_PLAYER_NUMBER = 6
 
 
 class Player():
@@ -18,6 +18,53 @@ class Player():
         self.name = name
         self.cards = []
         self.game_over = False
+    
+    def create_score(self):
+        # filtering
+        number_list = []
+        sign_list = []
+        for card in self.cards:
+            if card.isnumeric():
+                number_list.append(card)
+            else:
+                sign_list.append(card)
+        # sorting
+        sign_values = {"x": 3, "+": 2, "-": 1} 
+        number_list.sort(reverse=True)
+        sign_list.sort(key=lambda x: sign_values.get(x, 0), reverse=True)
+
+        # computing score
+        can_keep_combining = True
+        score_string = ""
+        while can_keep_combining:
+            if len(number_list)==0:
+                can_keep_combining = False
+                for _ in range(len(number_list+sign_list)):
+                    score_string += " [-5]"
+            else:
+                score_string += f" {number_list[0]}"
+                number_list.pop(0)
+                if len(sign_list)==0 or len(number_list)==0:
+                    can_keep_combining = False
+                    for _ in range(len(number_list+sign_list)):
+                        score_string += " [-5]"
+                else:
+                    score_string += f" {sign_list[0]}"
+                    if sign_list[0] == '-':
+                        number_list.sort()  # after a minus sign, we want the smallest number available
+                    sign_list.pop(0)
+
+        # evaluate score string
+        clean_math = ""
+        for char in score_string:
+            if char not in [" ", "[", "]"]:
+                char = '*' if char=='x' else char
+                clean_math += char
+
+        score = eval(clean_math)
+        score_string += f" = {score}"         
+
+        return score_string
 
 
 class Theta_Game():
@@ -62,7 +109,7 @@ class Theta_Game():
         elif len(player.cards) > 5:
             return False
         else:
-            show_error_message('Something is wrong: number of card < 5')
+            show_message('Something is wrong: number of card < 5')
 
     def game_over(self):
         trigger = True
@@ -70,6 +117,14 @@ class Theta_Game():
             if len(player.cards) != 5:
                 trigger = False       
         return trigger
+
+    def compute_gameover_text(self):
+        gameover_text = "The game has ended, here are your scores : \n\n"
+        for player in self.player_dict.values():
+            gameover_text += f"{player.name}:\n"
+            gameover_text += player.create_score()
+            gameover_text += "\n\n"
+        return gameover_text
 
     def play_round(self, action, selected_cards):
         selected_nbr = len(selected_cards)

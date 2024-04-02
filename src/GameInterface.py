@@ -74,7 +74,8 @@ class GameInterface(QWidget):
                                                      
         # Game Over
         if self.game.game_over():
-            show_message("The game is over")
+            game_over_text = self.game.compute_gameover_text()
+            show_message(game_over_text)
             self.game_over_signal.emit()
 
 
