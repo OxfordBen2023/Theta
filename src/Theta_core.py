@@ -10,7 +10,7 @@ for index, item in enumerate(ALL_THETA_CARDS):
         ALL_THETA_CARDS[index] = str(item)
 
 TOTAL_NUMBER_OF_CARDS = len(ALL_THETA_CARDS)
-CARDS_BY_PLAYER_NUMBER = 6
+CARDS_BY_PLAYER_NUMBER = 10
 
 
 class Player():
@@ -119,7 +119,7 @@ class Theta_Game():
         return trigger
 
     def compute_gameover_text(self):
-        gameover_text = "The game has ended, here are your scores : \n\n"
+        gameover_text = "Here are your scores : \n\n"
         for player in self.player_dict.values():
             gameover_text += f"{player.name}:\n"
             gameover_text += player.create_score()

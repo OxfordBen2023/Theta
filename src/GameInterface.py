@@ -8,10 +8,11 @@ from src.Theta_core import *
 
 class GameInterface(QWidget):
     game_over_signal = pyqtSignal()
-    def __init__(self, player_dict_name):
+    def __init__(self, player_dict_name, player_dict_icon):
         super().__init__()
 
         self.player_name_dict = player_dict_name
+        self.player_icon_dict = player_dict_icon
         
         self.game = Theta_Game(self.player_name_dict)
         self.game.distribute()
@@ -24,7 +25,7 @@ class GameInterface(QWidget):
         ### 2 create wiggets
         self.interface_player_dict = {}
         for player_index, player_name in self.player_name_dict.items():
-            self.interface_player_dict[player_index]= MakeMoveInterface(player_index, player_name)
+            self.interface_player_dict[player_index]= MakeMoveInterface(player_index, player_name, self.player_icon_dict[player_index])
             self.interface_player_dict[player_index].action.button_throw.clicked.connect(self.throw_btn_pressed)
             self.interface_player_dict[player_index].action.button_pass.clicked.connect(self.pass_btn_pressed)
             self.interface_player_dict[player_index].action.button_draw.clicked.connect(self.draw_btn_pressed)

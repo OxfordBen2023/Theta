@@ -29,4 +29,7 @@ def show_choose_player_dialog(available_players):
 def show_name_player_dialog(player_number):
     pld = PlayerNameDialog(player_number)
     pld.exec_()
-    return pld.get_player_dict()
+    if pld.cancel == True:
+        return None, None
+    else:
+        return pld.get_player_dict()

@@ -18,7 +18,7 @@ class MainWindow(QMainWindow):
 
         self.welcome_widget = WelcomeScreen()
         self.welcome_widget.button_start.clicked.connect(self.activate_game)
-        self.game_interface = GameInterface({0:'placeholder'})
+        self.game_interface = GameInterface({0:'placeholder'},{0:'placeholder'})
         self.game_interface.game_over_signal.connect(self.show_title_screen)
 
         self.stacklayout.addWidget(self.welcome_widget)
@@ -31,19 +31,19 @@ class MainWindow(QMainWindow):
         ### set the layout for the Wigget (parent widget)
         self.widget.setLayout(self.stacklayout)
         self.setCentralWidget(self.widget)
-        self.resize(700, 550)
+        self.resize(800, 550)
 
     def activate_game(self):
         player_nbr = int(self.welcome_widget.player_combo_box.currentText())
         print(player_nbr)
         # call the Window dialog:
-        player_dict_name = show_name_player_dialog(player_nbr)
+        player_dict_name , player_dict_icon = show_name_player_dialog(player_nbr)
 
         if player_dict_name:
             print(f"count before: {self.stacklayout.count()}")
             self.stacklayout.removeWidget(self.game_interface)
             print(f"count removed: {self.stacklayout.count()}")
-            self.game_interface = GameInterface(player_dict_name)
+            self.game_interface = GameInterface(player_dict_name, player_dict_icon)
             # This not very beatiful ?
             self.game_interface.game_over_signal.connect(self.show_title_screen)
 
@@ -53,6 +53,4 @@ class MainWindow(QMainWindow):
             self.stacklayout.setCurrentIndex(1)
     
     def show_title_screen(self):
-        print("SWOW WINDOW WAS CALLED")
         self.stacklayout.setCurrentWidget(self.welcome_widget)
-        #setCurrentIndex(0)
