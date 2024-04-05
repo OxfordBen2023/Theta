@@ -1,7 +1,7 @@
 # THETA
 
 This is a brief description of my project.
-[![Video Thumbnail](resources/readme_medias/Game_window.png)](resources/readme_medias/theta_video.webm)
+[![Video Thumbnail](resources/readme_medias/thumbnail.png)](resources/readme_medias/theta_video_small.webm)
 
 ## Table of Contents
 - [Image](#introduction)
