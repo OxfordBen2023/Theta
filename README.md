@@ -11,10 +11,10 @@ It is also a means for me to practice building interfaces with PySide.
 
 # Visuals
 
-## Stard game :
+## Start game :
 
-[![Video Thumbnail](resources/readme_medias/thumbnail_start_game.png)](resources/readme_medias/video_sart_game.webm)
-[Download or Watch Video](resources/readme_medias/video_sart_game.webm)
+[![Video Thumbnail](resources/readme_medias/thumbnail_start_game.png)](resources/readme_medias/video_start_game.webm)
+[Download or Watch Video](resources/readme_medias/video_start_game.webm)
 
 ## End game :
 
