@@ -13,13 +13,11 @@ It is also a means for me to practice building interfaces with PySide.
 
 ## Start game :
 
-[![Video Thumbnail](resources/readme_medias/thumbnail_start_game.png)](resources/readme_medias/video_start_game.webm)
-[Download or Watch Video](resources/readme_medias/video_start_game.webm)
+![Image Description](resources/readme_medias/start_game.gif)
 
 ## End game :
 
-[![Video Thumbnail](resources/readme_medias/thumbnail_end_game.png)](resources/readme_medias/video_end_game.webm)
-[Download or Watch Video](resources/readme_medias/video_end_game.webm)
+![Image Description](resources/readme_medias/end_game.gif)
 
 ## Game rules :
 
