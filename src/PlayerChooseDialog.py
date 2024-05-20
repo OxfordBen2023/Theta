@@ -1,4 +1,6 @@
 from PyQt5.QtWidgets import QDialog, QVBoxLayout,QPushButton, QComboBox, QLabel
+import os
+os.environ["QT_LOGGING_RULES"] = "qt.qpa.wayland.warning=false"
 
 class PlayerChooseDialog(QDialog):
     def __init__(self, available_players, parent=None):

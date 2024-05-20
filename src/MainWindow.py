@@ -2,7 +2,6 @@ from PyQt5.QtWidgets import QMainWindow, QWidget,QStackedLayout
 from src.utils import *
 from src.GameInterface import GameInterface
 from src.WelcomScreen import WelcomeScreen
-from src.PlayerNameDialog import PlayerNameDialog
 from src.Theta_core import *
 
 
@@ -26,7 +25,7 @@ class MainWindow(QMainWindow):
 
         ### create container widget
         self.widget = QWidget()
-        self.widget.setStyleSheet("padding: 0; margin: 0; ")
+        self.widget.setStyleSheet("padding: 0; margin: 0; ")  # Temporary initialisation
 
         ### set the layout for the Wigget (parent widget)
         self.widget.setLayout(self.stacklayout)
@@ -35,16 +34,14 @@ class MainWindow(QMainWindow):
 
     def activate_game(self):
         player_nbr = int(self.welcome_widget.player_combo_box.currentText())
-        print(player_nbr)
+
         # call the Window dialog:
         player_dict_name , player_dict_icon = show_name_player_dialog(player_nbr)
 
         if player_dict_name:
-            print(f"count before: {self.stacklayout.count()}")
             self.stacklayout.removeWidget(self.game_interface)
-            print(f"count removed: {self.stacklayout.count()}")
             self.game_interface = GameInterface(player_dict_name, player_dict_icon)
-            # This not very beatiful ?
+            # This not very beatiful (?)
             self.game_interface.game_over_signal.connect(self.show_title_screen)
 
             self.stacklayout.addWidget(self.game_interface)
