@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QGridLayout, QVBoxLayout, QGroupBox, QPushButton, QLabel, QDialog, QLineEdit
+from PyQt5.QtWidgets import QGridLayout, QVBoxLayout, QGroupBox, QPushButton, QDialog, QLineEdit
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QSize
 from random import randint
