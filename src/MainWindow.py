@@ -2,7 +2,6 @@ from PyQt5.QtWidgets import QMainWindow, QWidget,QStackedLayout
 from src.utils import *
 from src.GameInterface import GameInterface
 from src.WelcomScreen import WelcomeScreen
-from src.PlayerNameDialog import PlayerNameDialog
 from src.Theta_core import *
 
 
@@ -40,9 +39,7 @@ class MainWindow(QMainWindow):
         player_dict_name , player_dict_icon = show_name_player_dialog(player_nbr)
 
         if player_dict_name:
-            print(f"count before: {self.stacklayout.count()}")
             self.stacklayout.removeWidget(self.game_interface)
-            print(f"count removed: {self.stacklayout.count()}")
             self.game_interface = GameInterface(player_dict_name, player_dict_icon)
             # This not very beatiful ?
             self.game_interface.game_over_signal.connect(self.show_title_screen)

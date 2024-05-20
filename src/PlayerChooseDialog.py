@@ -1,5 +1,9 @@
 from PyQt5.QtWidgets import QDialog, QVBoxLayout,QPushButton, QComboBox, QLabel
 
+# Just to remove this warning when toggling the combobox: qt.qpa.wayland: Wayland does not support QWindow::requestActivate()
+import os
+os.environ["QT_LOGGING_RULES"] = "qt.qpa.wayland.warning=false"
+
 class PlayerChooseDialog(QDialog):
     def __init__(self, available_players, parent=None):
         super(PlayerChooseDialog, self).__init__(parent)
