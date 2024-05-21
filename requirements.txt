@@ -1,2 +1,4 @@
+inflect==7.2.1
 PyQt5==5.15.10
 PyQt5_sip==12.13.0
+pytest==8.2.1

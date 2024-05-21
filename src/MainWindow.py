@@ -2,8 +2,6 @@ from PyQt5.QtWidgets import QMainWindow, QWidget,QStackedLayout
 from src.utils import *
 from src.GameInterface import GameInterface
 from src.WelcomScreen import WelcomeScreen
-from src.Theta_core import *
-
 
 
 class MainWindow(QMainWindow):
