@@ -135,6 +135,7 @@ class Theta_Game():
 
         available_player = []
         for player_index, player in self.player_dict.items():
+            self.is_player_game_over(player) # FIX
             if player_index != self.active_player and player.game_over != True:
                 available_player.append(player.name)
 

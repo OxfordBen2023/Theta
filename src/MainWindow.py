@@ -3,7 +3,6 @@ from src.utils import *
 from src.GameInterface import GameInterface
 from src.WelcomScreen import WelcomeScreen
 
-
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
