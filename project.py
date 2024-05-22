@@ -86,7 +86,6 @@ def score_text(input_dict):
         score_string = create_score_str(player.cards)
         score_int = evaluate_score(score_string)
         player_score_dict[player.name] = [score_string, score_int]
-        # gameover_text += f"\n\n{player.name}   {score_string}  =  {score_int}\n\n"
 
     # Sort by the score_int (which is the second element in the list of values)
     sorted_player = sorted(player_score_dict.items(), key=lambda item: item[1][1], reverse=True)

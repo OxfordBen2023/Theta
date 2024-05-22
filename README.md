@@ -9,11 +9,10 @@ It also serves as a practice project for me to build interfaces with PyQt/PySide
 
 ## Video Presentation for cs50
 
-[![LINK TO VIDEO](resources/readme_medias/game_window.png)](https://www.youtube.com/watch?v=e4fwY9ZsxPw&t)
+[![LINK TO VIDEO](resources/readme_medias/play_youtube.png)](https://youtu.be/JPLNyniYB7U )
 
-#### Video Demo1:  <https://www.youtube.com/watch?v=e4fwY9ZsxPw&t>
+#### Video Demo link:  <https://youtu.be/JPLNyniYB7U >
 
-#### Video Demo2:  https://www.youtube.com/watch?v=e4fwY9ZsxPw&t
 
 ## The game interface
 Each part of the game interface is a custom subclass of QWidget. They are nested within each other, from the top-level 'MainWindow' to the smallest component, 'CardButton'.
@@ -60,7 +59,7 @@ To further develop this project, I would like to:
 - Provide a better visual cue for cards returning to a player's hand, possibly with animation or color changes.
 - Develop an AI to play against the computer, making this project into a fully-fledged video game.
 
-## The Physical Prototype
+## First Physical Prototype
 
 To end this presentation on a light note, here is a photo of the first paper prototype handcrafted by my friend:
 
