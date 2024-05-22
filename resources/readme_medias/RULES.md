@@ -14,7 +14,7 @@ Players take turns choosing from these actions:
 ### Throw
 Choose 2 or 3 cards and place them face down. The right-hand neighbor randomly returns one card to the player’s hand. The remaining card(s) go to the bottom of the draw pile.
 
-#### Pass
+### Pass
 Choose 2 to 4 cards and place them face down. The right-hand neighbor randomly returns one card to the player’s hand. The remaining card(s) go to the left-hand neighbor. Cards cannot be passed to players who have finished playing.
 
 ### Draw

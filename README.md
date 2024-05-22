@@ -9,7 +9,11 @@ It also serves as a practice project for me to build interfaces with PyQt/PySide
 
 ## Video Presentation for cs50
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/e4fwY9ZsxPw&t/0.jpg)](https://www.youtube.com/watch?v=e4fwY9ZsxPw&t)
+[![LINK TO VIDEO](resources/readme_medias/game_window.png)](https://www.youtube.com/watch?v=e4fwY9ZsxPw&t)
+
+#### Video Demo1:  <https://www.youtube.com/watch?v=e4fwY9ZsxPw&t>
+
+#### Video Demo2:  https://www.youtube.com/watch?v=e4fwY9ZsxPw&t
 
 ## The game interface
 Each part of the game interface is a custom subclass of QWidget. They are nested within each other, from the top-level 'MainWindow' to the smallest component, 'CardButton'.
@@ -48,13 +52,13 @@ When the game ends, you are presented with a final dialog window before being re
 
 To further develop this project, I would like to:
 
-    - Add a menu bar with options to restart the game with the current players, return to the title screen, or quit.
-    - Include a dialog window with the game rules accessible from the menu.
-    - Add an option to hide the values of the cards of all non-active players.
-    - Save a JSON file with the names and associated icons of the last players who played the game.
-    - Add a status bar that provides a hint of what an action does when the cursor hovers over the action button.
-    - Provide a better visual cue for cards returning to a player's hand, possibly with animation or color changes.
-    - Develop an AI to play against the computer, making this project into a fully-fledged video game.
+- Add a menu bar with options to restart the game with the current players, return to the title screen, or quit.
+- Include a dialog window with the game rules accessible from the menu.
+- Add an option to hide the values of the cards of all non-active players.
+- Save a JSON file with the names and associated icons of the last players who played the game.
+- Add a status bar that provides a hint of what an action does when the cursor hovers over the action button.
+- Provide a better visual cue for cards returning to a player's hand, possibly with animation or color changes.
+- Develop an AI to play against the computer, making this project into a fully-fledged video game.
 
 ## The Physical Prototype
 
