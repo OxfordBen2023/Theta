@@ -26,6 +26,6 @@ class CardButton(QPushButton):
             self.setStyleSheet("background-color: grey; color: white;")
 
         elif self.isChecked():
-            self.setStyleSheet("background-color: green; color: white;")
+            self.setStyleSheet("background-color: #55aaee; color: white;")
         else:
-            self.setStyleSheet("background-color: red; color: white; ")
+            self.setStyleSheet("background-color: blue; color: white; ")

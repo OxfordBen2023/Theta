@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QGroupBox, QLabel
 from PyQt5.QtGui import QPixmap
-from src.Action_Buttons import ActionButtons
+from src.ActionButtons import ActionButtons
 from src.HandOfCards import HandOfCards
 
 

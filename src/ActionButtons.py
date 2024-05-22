@@ -16,11 +16,6 @@ class ActionButtons(QWidget):
         self.button_draw = QPushButton('draw')
         self.button_special = QPushButton('special draw')
 
-        #spacer_item = QWidgetItem(QSpacerItem(20, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
-
-        # size_policy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
-
-        #self.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
 
         self.buttons = [self.button_throw, 
                         self.button_pass, 

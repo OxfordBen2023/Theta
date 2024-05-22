@@ -4,13 +4,14 @@ from src.utils import *
 ALL_THETA_CARDS = [0,9,1,1,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5,6,6,6,6,6,7,7,7,7,7,8,8,8,8,8,
         '+','+','+','+','+','+','+','+','+','+','-','-','-','-','-','-','-','-','x','x','x','x','x','x']
 
+CARDS_BY_PLAYER_NUMBER = 11
+
 # convert all to string to avoid future type conflict:
 for index, item in enumerate(ALL_THETA_CARDS):
     if type(item) == int:
         ALL_THETA_CARDS[index] = str(item)
 
 TOTAL_NUMBER_OF_CARDS = len(ALL_THETA_CARDS)
-CARDS_BY_PLAYER_NUMBER = 6
 
 class Player():
     def __init__(self,name):

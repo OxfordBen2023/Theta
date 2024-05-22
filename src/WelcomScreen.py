@@ -11,7 +11,7 @@ class WelcomeScreen(QWidget):
         self.widget_layout.setAlignment(Qt.AlignCenter)
 
         # Create the child widgets.
-        title_label = QLabel("THETA", self)
+        title_label = QLabel("THETA QT", self)
         title_label.setStyleSheet("font-size: 50px; font-weight: bold; color: #2ecc71;")
 
         instructions_label = QLabel("Choose your number of players:", self)
